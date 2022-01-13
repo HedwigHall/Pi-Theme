@@ -1,0 +1,106 @@
+  <style>
+/* Context Menu */
+    .ContextMenu{
+    background-color: #1F293B;
+    color: #6282B2;
+    width: fit-content;
+    position: absolute;
+    border-radius: 12.5px;
+    list-style-type:none;
+    padding: 1px;
+    margin: 0px;
+  }
+  hr{
+    background-color: #314159;
+    height: 1px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+  }
+  li{
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #1F293B;
+  }
+  li:hover{
+    background-color: #314159;
+  }
+  li:nth-child(2){
+    border-top-left-radius: 12.5px;
+    border-top-right-radius: 12.5px;
+  }
+  li:last-child{
+  border-bottom-left-radius: 12.5px;
+  border-bottom-right-radius: 12.5px;
+}
+  .SizeController, .ColorController{
+    margin: 0px;
+    background-color: #1F293B;
+    border: solid 1px #1F293B;
+    border-radius: 12.5px;
+    -moz-appearance: textfield;
+    color: #FFFFFF;
+}
+li:hover .SizeController, .SizeController:active, li:hover .ColorController, .ColorController:active{
+    background-color: #314159;
+    border: solid 1px #FFFF00;
+    border-radius: 12.5px;
+    color: #FFFF00;
+}
+ul.ContextMenu li input.CheckboxInput {
+  margin: 0px;
+  appearance: none;
+  background-color: #1F293B;
+  font: inherit;
+  color: #FFF;
+  width: 0.75em;
+  height: 0.75em;
+  border: 1px solid #314159;
+  border-radius: 0.15em;
+  display: inline grid;
+  place-content: center;
+}
+ul.ContextMenu li input.CheckboxInput::before {
+  content: "";
+  top: 0.1em;
+  left: 0.1em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.15em;
+  transform: scale(0);
+  transform-origin: bottom left;
+  background-color: #6282B2;
+}
+ul.ContextMenu li input.CheckboxInput:checked::before {
+  transform: scale(1);
+}
+ul.ContextMenu li input.CheckboxInput:focus {
+  outline: none;
+  outline-offset: max(2px, 0.15em);
+}
+ul.ContextMenu li input.CheckboxInput{
+  background-color: #FFF;
+}
+ul.ContextMenu li:hover input.CheckboxInput{
+  background-color: #314159;
+  border: 1px solid #FFFF00;
+}
+</style>
+<ul class="ContextMenu" style="top: 0px;left: 0px" hidden="">
+<li>Title</li>
+<hr>
+<li>
+  <label for="TemplateCheckInput">Checkbox Option:	</label>
+  <input type="checkbox" id="TemplateCheckInput" class="CheckboxInput" oninput="alert('Option Checked')">
+</li>
+<hr>
+<li><form action="javascript:alert('Color Submitted');">
+  <label for="TemplateColorInput">Color Input:	</label>
+  <input type="text" id="TemplateColorInput" class="ColorInput" size="7" maxlength="7" value="#FFFFFF" pattern="#[0-9A-Fa-f]{6}" title="a hexadecimal color">
+</form></li>
+<hr>
+<li><form action="javascript:alert('Number Input Submitted');">
+  <label for="TemplateNumberInput">Number Input:	</label>
+  <input type="text" id="TemplateNumberInput" class="NumberInput" size="3" maxlength="3" value="10" pattern="\d+(\.\d+)?" title="a number">
+</form></li>
+</ul>
