@@ -1,3 +1,4 @@
+<ul class="ContextMenu" style="top: 0px;left: 0px" hidden="">
   <style>
 /* Context Menu */
     .ContextMenu{
@@ -29,7 +30,7 @@
     border-top-left-radius: 12.5px;
     border-top-right-radius: 12.5px;
   }
-  li:last-child{
+  li:nth-last-child(2){
   border-bottom-left-radius: 12.5px;
   border-bottom-right-radius: 12.5px;
 }
@@ -86,7 +87,6 @@ ul.ContextMenu li:hover input.CheckboxInput{
   border: 1px solid #FFFF00;
 }
 </style>
-<ul class="ContextMenu" style="top: 0px;left: 0px" hidden="">
 <li>Title</li>
 <hr>
 <li>
@@ -103,4 +103,30 @@ ul.ContextMenu li:hover input.CheckboxInput{
   <label for="TemplateNumberInput">Number Input:	</label>
   <input type="text" id="TemplateNumberInput" class="NumberInput" size="3" maxlength="3" value="10" pattern="\d+(\.\d+)?" title="a number">
 </form></li>
+  <script>
+    function MouseDown(e){
+  if(e.button == 0){
+    if(document.querySelector(".ContextMenu:hover") == null){
+      if(!document.getElementsByClassName("ContextMenu")[0].hidden){
+        document.getElementsByClassName("ContextMenu")[0].hidden = true;
+      }
+    }
+  } else if(e.button == 0){
+    if(document.querySelector(".ContextMenu:hover") == null){
+      if(!document.getElementsByClassName("ContextMenu")[0].hidden){
+        document.getElementsByClassName("ContextMenu")[0].hidden = true;
+      }
+    }
+  } else if(e.button == 2){
+    e.preventDefault();
+    document.getElementsByClassName("ContextMenu")[0].style.left = e.clientX+"px";
+    document.getElementsByClassName("ContextMenu")[0].style.top = e.clientY+"px";
+    document.getElementsByClassName("ContextMenu")[0].hidden = false;
+  }
+};
+document.oncontextmenu = function(e){
+  e.preventDefault();
+}
+document.body.addEventListener("mousedown", MouseDown);
+  </script>
 </ul>
