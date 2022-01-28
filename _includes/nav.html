@@ -63,9 +63,9 @@
     </svg>
   </hamburger>
   <navigation>
-    <a href="/">Home</a>
-    <a href="/whiteboard">Whiteboard</a>
-    <a href="/Pi-Theme">Pi-Theme</a>
+    {% for link in site.data.navigation %}
+    <a href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
   </navigation>
   <script>document.onLoad = () => {document.getElementsByTagName("hamburger")[0].onclick = () => {if(document.getElementsByTagName("nav")[0].className == "collapsed"){document.getElementsByTagName("nav")[0].className = "expanded"} else {document.getElementsByTagName("nav")[0].className = "collapsed"}}}</script>
 </nav>
