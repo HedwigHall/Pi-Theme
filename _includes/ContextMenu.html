@@ -23,7 +23,7 @@
       padding-right: 5px;
       background-color: #1F293B;
     }
-    li:hover{
+    li:not(.ContextMenuHeader):hover{
       background-color: #314159;
     }
     li:nth-child(2){
@@ -98,8 +98,12 @@
       background-color: #1F293B;
       border: 1px solid #6282B2;
     }
+    input:invalid, input:invalid:hover{
+      border-color: #ce4159;
+      color: #6282B2;
+    }
   </style>
-  <li>Title</li>
+  <li class="ContextMenuHeader">Title</li>
   <hr>
   <li>
     <label for="TemplateCheckInput">Checkbox Option:	</label>
