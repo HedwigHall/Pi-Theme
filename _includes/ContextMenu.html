@@ -1,4 +1,4 @@
-<ul class="ContextMenu" style="top: 0px;left: 0px" hidden="">
+<ul class="ContextMenu" style="top: 243px; left: 375px;">
   <style>
 /* Context Menu */
     .ContextMenu{
@@ -86,6 +86,10 @@ ul.ContextMenu li:hover input.CheckboxInput{
   background-color: #314159;
   border: 1px solid #FFFF00;
 }
+ul.ContextMenu li input.CheckboxInput{
+  background-color: #1F293B;
+  border: 1px solid #6282B2;
+}
 body{
   width: 100vw;
   height: 100vh;
@@ -93,24 +97,22 @@ body{
 form{
   margin: 0px
 }
-</style>
-<li>Title</li>
-<hr>
-<li>
-  <label for="TemplateCheckInput">Checkbox Option:	</label>
-  <input type="checkbox" id="TemplateCheckInput" class="CheckboxInput" oninput="alert('Option Checked')">
-</li>
-<hr>
-<li><form action="javascript:alert('Color Submitted');">
-  <label for="TemplateColorInput">Color Input:	</label>
-  <input type="text" id="TemplateColorInput" class="ColorInput" size="7" maxlength="7" value="#FFFFFF" pattern="#[0-9A-Fa-f]{6}" title="a hexadecimal color">
-</form></li>
-<hr>
-<li><form action="javascript:alert('Number Input Submitted');">
-  <label for="TemplateNumberInput">Number Input:	</label>
-  <input type="text" id="TemplateNumberInput" class="NumberInput" size="3" maxlength="3" value="10" pattern="\d+(\.\d+)?" title="a number">
-</form></li>
-  <script>
+  </style>
+  <li>Title</li>
+  <hr>
+  <li>
+    <label for="TemplateCheckInput">Checkbox Option:	</label>
+    <input type="checkbox" id="TemplateCheckInput" class="CheckboxInput" oninput="alert('Option Checked')">
+  </li>
+  <hr>
+  <li>
+    <label for="TemplateColorInput">Color Input:	</label>
+    <input type="text" id="TemplateColorInput" class="ColorInput" size="7" maxlength="7" value="#FFFFFF" pattern="#[0-9A-Fa-f]{6}" title="a hexadecimal color" oninput="alert('Color Input Inputted')"></li>
+  <hr>
+  <li>
+    <label for="TemplateNumberInput">Number Input:	</label>
+    <input type="text" id="TemplateNumberInput" class="NumberInput" size="3" maxlength="3" value="10" pattern="\d+(\.\d+)?" title="a number" oninput="alert('Number Input Inputted')"></li>
+    <script>
     function MouseDown(e){
   if(e.button == 0){
     if(document.querySelector(".ContextMenu:hover") == null){
