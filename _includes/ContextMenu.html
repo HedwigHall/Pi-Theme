@@ -107,16 +107,16 @@
   <hr>
   <li>
     <label for="TemplateCheckInput">Checkbox Option:	</label>
-    <input type="checkbox" id="TemplateCheckInput" class="CheckboxInput" oninput="alert('Option Checked')">
+    <input type="checkbox" id="TemplateCheckInput" class="CheckboxInput" oninput="console.log('Option Checked')">
   </li>
   <hr>
   <li>
     <label for="TemplateColorInput">Color Input:	</label>
-    <input type="text" id="TemplateColorInput" class="ColorInput" size="7" maxlength="7" value="#FFFFFF" pattern="#[0-9A-Fa-f]{6}" title="a hexadecimal color" oninput="alert('Color Input Inputted')"></li>
+    <input type="text" id="TemplateColorInput" class="ColorInput" size="7" maxlength="7" value="#FFFFFF" pattern="#[0-9A-Fa-f]{6}" title="a hexadecimal color" oninput="console.log('Color Input Inputted')"></li>
   <hr>
   <li>
     <label for="TemplateNumberInput">Number Input:	</label>
-    <input type="text" id="TemplateNumberInput" class="NumberInput" size="3" maxlength="3" value="10" pattern="\d+(\.\d+)?" title="a number" oninput="alert('Number Input Inputted')"></li>
+    <input type="text" id="TemplateNumberInput" class="NumberInput" size="3" maxlength="3" value="10" pattern="\d+(\.\d+)?" title="a number" oninput="console.log('Number Input Inputted')"></li>
     <script>
     function MouseDown(e){
   if(e.button == 0){
